@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14365b"/>
+      <stop offset="100%" stop-color="#0a1f3a"/>
+    </linearGradient>
+    <linearGradient id="suit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2942"/>
+      <stop offset="100%" stop-color="#0a1729"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c8a4"/>
+      <stop offset="100%" stop-color="#c89e7a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <circle cx="60" cy="80" r="2" fill="#b5853a" opacity="0.4"/>
+  <circle cx="340" cy="120" r="2" fill="#b5853a" opacity="0.3"/>
+  <circle cx="100" cy="200" r="1.5" fill="#b5853a" opacity="0.35"/>
+  <circle cx="320" cy="260" r="1.5" fill="#b5853a" opacity="0.4"/>
+  <ellipse cx="200" cy="540" rx="180" ry="180" fill="url(#suit)"/>
+  <path d="M120 460 Q200 380 280 460 L 280 540 L 120 540 Z" fill="url(#suit)"/>
+  <path d="M195 380 L 195 440 L 200 460 L 205 440 L 205 380 Z" fill="#ffffff"/>
+  <path d="M200 380 L 195 410 L 200 415 L 205 410 Z" fill="#b5853a"/>
+  <ellipse cx="200" cy="240" rx="62" ry="78" fill="url(#skin)"/>
+  <path d="M138 220 Q150 150 200 145 Q250 150 262 220 Q270 200 260 175 Q240 130 200 128 Q160 130 140 175 Q130 200 138 220 Z" fill="#2a1810"/>
+  <ellipse cx="178" cy="240" rx="4" ry="5" fill="#2a1810"/>
+  <ellipse cx="222" cy="240" rx="4" ry="5" fill="#2a1810"/>
+  <path d="M170 235 Q178 232 186 235" stroke="#2a1810" stroke-width="1.5" fill="none"/>
+  <path d="M214 235 Q222 232 230 235" stroke="#2a1810" stroke-width="1.5" fill="none"/>
+  <path d="M195 265 Q200 275 205 265" stroke="#a87a5a" stroke-width="1.5" fill="none"/>
+  <path d="M186 290 Q200 298 214 290" stroke="#8b5a3c" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="ogbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e2a47"/>
+      <stop offset="100%" stop-color="#0a1f3a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogbg)"/>
+  <g opacity="0.08">
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#ffffff"/>
+    </pattern>
+    <rect width="1200" height="630" fill="url(#dots)"/>
+  </g>
+  <rect x="80" y="80" width="60" height="4" fill="#b5853a"/>
+  <text x="80" y="130" font-family="Georgia, serif" font-size="22" fill="#b5853a" letter-spacing="4">LEXAR LEGAL CONSULTANTS &#xB7; MEDELL&#xCD;N</text>
+  <text x="80" y="240" font-family="Georgia, serif" font-size="78" font-weight="700" fill="#ffffff">Abogados en</text>
+  <text x="80" y="320" font-family="Georgia, serif" font-size="78" font-weight="700" fill="#b5853a">Medell&#xED;n</text>
+  <text x="80" y="400" font-family="Inter, sans-serif" font-size="32" fill="#cbd5e1">Protecci&#xF3;n legal y proyecci&#xF3;n empresarial.</text>
+  <text x="80" y="445" font-family="Inter, sans-serif" font-size="32" fill="#cbd5e1">Diagn&#xF3;stico preventivo gratuito.</text>
+  <g transform="translate(80, 510)">
+    <rect width="280" height="60" rx="6" fill="#b5853a"/>
+    <text x="140" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#ffffff">Cont&#xE1;ctenos hoy</text>
+  </g>
+  <g transform="translate(80, 600)">
+    <text font-family="Inter, sans-serif" font-size="14" fill="#64748b">Socio en protecci&#xF3;n legal y proyecci&#xF3;n empresarial &#xB7; 324 577 7090</text>
+  </g>
+</svg>

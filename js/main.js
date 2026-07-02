@@ -23,6 +23,18 @@
     console.info("[track]", name, params);
   }
 
+  /* ---------- Credentials marquee (mobile) ---------- */
+  document.querySelectorAll(".credentials-carousel").forEach((carousel) => {
+    const marquee = carousel.querySelector(".credentials-marquee");
+    const row = carousel.querySelector(".credentials-row");
+    if (!marquee || !row || marquee.querySelector(".credentials-row--clone")) return;
+
+    const clone = row.cloneNode(true);
+    clone.classList.add("credentials-row--clone");
+    clone.setAttribute("aria-hidden", "true");
+    marquee.appendChild(clone);
+  });
+
   /* ---------- Header sombra al scroll ---------- */
   const header = document.querySelector(".header");
   if (header) {
@@ -41,9 +53,40 @@
       navLinks.classList.toggle("open");
     });
     navLinks.querySelectorAll("a").forEach((a) => {
-      a.addEventListener("click", () => navLinks.classList.remove("open"));
+      a.addEventListener("click", (e) => {
+        if (window.innerWidth <= 900 && a.classList.contains("nav-dropdown-trigger")) {
+          return;
+        }
+        navLinks.classList.remove("open");
+        document.querySelectorAll(".nav-dropdown.open").forEach((d) => {
+          d.classList.remove("open");
+          const trigger = d.querySelector(".nav-dropdown-trigger");
+          if (trigger) trigger.setAttribute("aria-expanded", "false");
+        });
+      });
     });
   }
+
+  /* ---------- Nav dropdown (mobile) ---------- */
+  document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
+    const trigger = dropdown.querySelector(".nav-dropdown-trigger");
+    if (!trigger) return;
+
+    trigger.addEventListener("click", (e) => {
+      if (window.innerWidth > 900) return;
+      e.preventDefault();
+      const isOpen = dropdown.classList.contains("open");
+      document.querySelectorAll(".nav-dropdown.open").forEach((d) => {
+        d.classList.remove("open");
+        const t = d.querySelector(".nav-dropdown-trigger");
+        if (t) t.setAttribute("aria-expanded", "false");
+      });
+      if (!isOpen) {
+        dropdown.classList.add("open");
+        trigger.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
 
   /* ---------- FAQ accordion ---------- */
   document.querySelectorAll(".faq-item").forEach((item) => {

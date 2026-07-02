@@ -259,7 +259,20 @@
 
       <nav class="nav" aria-label="Principal">
         <ul class="nav-links">
-          <li><a href="#servicios">Servicios</a></li>
+          <li class="nav-dropdown">
+            <a href="#servicios" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              Servicios
+              <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="nav-dropdown-menu" role="menu">
+              <li><a href="#servicio-laboral" role="menuitem">Derecho laboral y gestión del talento humano</a></li>
+              <li><a href="#servicio-corporativo" role="menuitem">Estructura y expansión corporativa</a></li>
+              <li><a href="#servicio-estatal" role="menuitem">Oportunidades de negocio con el Estado</a></li>
+              <li><a href="#servicio-activos" role="menuitem">Protección de activos y recuperación de capital</a></li>
+              <li><a href="#servicio-fiscal" role="menuitem">Optimización fiscal inteligente</a></li>
+              <li><a href="#servicio-litigio" role="menuitem">Defensa integral de derechos y litigio estratégico</a></li>
+            </ul>
+          </li>
           <li><a href="#proceso">Cómo trabajamos</a></li>
           <li><a href="#equipo">Equipo</a></li>
           <li><a href="#testimonios">Testimonios</a></li>
@@ -370,15 +383,25 @@
   <section class="credentials" style="padding: 32px 0;">
     <div class="container">
       <div class="credentials-label">Empresas que confían en nuestra estrategia</div>
-      <div class="credentials-row">
-        <span class="credential">C.I. Global S.A.S.</span>
-        <span class="credential">Unimedical del Sur</span>
-        <span class="credential">Galaxia Seguridad Ltda.</span>
-        <span class="credential">Transportes Gómez Rodríguez</span>
-        <span class="credential">Urba Eléctricos</span>
-        <span class="credential">Empresa de Energía del Putumayo</span>
-        <span class="credential">Multitransport Express</span>
-        <span class="credential">Corponova</span>
+      <div class="credentials-carousel" aria-label="Empresas que confían en LEXAR">
+        <div class="credentials-marquee">
+          <div class="credentials-row">
+        <figure class="credential-logo"><img src="images/aguas_puerto_caicedo.webp" alt="Aguas Puerto Caicedo" loading="lazy" width="160" height="64"></figure>
+        <figure class="credential-logo"><img src="images/ci_global.webp" alt="C.I. Global S.A.S." loading="lazy" width="160" height="64"></figure>
+        <figure class="credential-logo"><img src="images/corponova.webp" alt="Corponova" loading="lazy" width="160" height="64"></figure>
+        <figure class="credential-logo"><img src="images/emevasi_valle_sibundoy.webp" alt="Emevasi Valle Sibundoy" loading="lazy" width="160" height="64"></figure>
+        <figure class="credential-logo"><img src="images/energia_putumayo.webp" alt="Empresa de Energía del Putumayo" loading="lazy" width="160" height="64"></figure>
+        <figure class="credential-logo"><img src="images/galaxia_seguridad.webp" alt="Galaxia Seguridad Ltda." loading="lazy" width="160" height="64"></figure>
+        <figure class="credential-logo"><img src="images/inzon.webp" alt="Inzon" loading="lazy" width="160" height="64"></figure>
+        <figure class="credential-logo"><img src="images/la_voragine.webp" alt="La Vorágine" loading="lazy" width="160" height="64"></figure>
+        <figure class="credential-logo"><img src="images/multitransport_express.webp" alt="Multitransport Express" loading="lazy" width="160" height="64"></figure>
+        <figure class="credential-logo"><img src="images/pi3nk.webp" alt="Pi3nk" loading="lazy" width="160" height="64"></figure>
+        <figure class="credential-logo"><img src="images/surcolombiana.webp" alt="Surcolombiana" loading="lazy" width="160" height="64"></figure>
+        <figure class="credential-logo"><img src="images/transportes_gomez_rodriguez.webp" alt="Transportes Gómez Rodríguez" loading="lazy" width="160" height="64"></figure>
+        <figure class="credential-logo"><img src="images/unimedical_del_sur.webp" alt="Unimedical del Sur" loading="lazy" width="160" height="64"></figure>
+        <figure class="credential-logo"><img src="images/urba_electricos.webp" alt="Urba Eléctricos" loading="lazy" width="160" height="64"></figure>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -395,16 +418,16 @@
       </div>
 
       <div class="services-grid">
-        <article class="service-card reveal">
+        <article class="service-card reveal" id="servicio-laboral">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>
           </div>
-          <h3>Gestión y blindaje de talento humano</h3>
+          <h3>Derecho laboral y gestión del talento humano</h3>
           <p>Aseguramos su relación con los colaboradores mediante contratos de alta precisión, reglamentos internos (R.I.T.) robustos y defensa judicial proactiva que minimiza contingencias económicas.</p>
           <a href="#consulta">Blindar mi empresa <span class="icon-arrow">→</span></a>
         </article>
 
-        <article class="service-card reveal">
+        <article class="service-card reveal" id="servicio-corporativo">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
@@ -413,7 +436,7 @@
           <a href="#consulta">Estructurar mi empresa <span class="icon-arrow">→</span></a>
         </article>
 
-        <article class="service-card reveal">
+        <article class="service-card reveal" id="servicio-estatal">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
@@ -422,7 +445,7 @@
           <a href="#consulta">Participar en licitaciones <span class="icon-arrow">→</span></a>
         </article>
 
-        <article class="service-card reveal">
+        <article class="service-card reveal" id="servicio-activos">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
           </div>
@@ -431,7 +454,7 @@
           <a href="#consulta">Recuperar cartera <span class="icon-arrow">→</span></a>
         </article>
 
-        <article class="service-card reveal">
+        <article class="service-card reveal" id="servicio-fiscal">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
@@ -440,7 +463,7 @@
           <a href="#consulta">Optimizar mis impuestos <span class="icon-arrow">→</span></a>
         </article>
 
-        <article class="service-card reveal">
+        <article class="service-card reveal" id="servicio-litigio">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           </div>
@@ -500,8 +523,8 @@
 
       <div class="services-grid">
         <article class="service-card reveal" style="text-align: center;">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <div class="team-photo">
+            <img src="images/milton.png" alt="Milton Rodrigo Acosta" loading="lazy" width="220" height="275">
           </div>
           <h3>Milton Rodrigo Acosta</h3>
           <p style="font-weight: 600; color: var(--gold); margin-bottom: 8px;">Estratega en Relaciones Laborales y Cumplimiento Normativo</p>
@@ -509,8 +532,8 @@
         </article>
 
         <article class="service-card reveal" style="text-align: center;">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <div class="team-photo">
+            <img src="images/ovidio.png" alt="Ovidio Rendón González" loading="lazy" width="220" height="275">
           </div>
           <h3>Ovidio Rendón González</h3>
           <p style="font-weight: 600; color: var(--gold); margin-bottom: 8px;">Líder en Derecho Comercial y Gestión de Alianzas Corporativas</p>
@@ -803,11 +826,11 @@
         <div>
           <h4>Servicios</h4>
           <ul>
-            <li><a href="#servicios">Blindaje de talento humano</a></li>
-            <li><a href="#servicios">Estructura corporativa</a></li>
-            <li><a href="#servicios">Contratación estatal</a></li>
-            <li><a href="#servicios">Optimización fiscal</a></li>
-            <li><a href="#servicios">Litigio estratégico</a></li>
+            <li><a href="#servicio-laboral">Derecho laboral y gestión del talento humano</a></li>
+            <li><a href="#servicio-corporativo">Estructura corporativa</a></li>
+            <li><a href="#servicio-estatal">Contratación estatal</a></li>
+            <li><a href="#servicio-fiscal">Optimización fiscal</a></li>
+            <li><a href="#servicio-litigio">Litigio estratégico</a></li>
             <li><a href="comercial.html">Derecho comercial</a></li>
           </ul>
         </div>

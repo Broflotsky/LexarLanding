@@ -597,7 +597,7 @@ section {
 .credentials-marquee {
   display: block;
 }
-.credentials-row--clone {
+.credentials-row.credentials-row--clone {
   display: none;
 }
 .credentials-row {
@@ -672,7 +672,7 @@ section {
     width: max-content;
     animation: credentials-marquee 45s linear infinite;
   }
-  .credentials-row--clone {
+  .credentials-row.credentials-row--clone {
     display: flex;
   }
   .credentials-marquee:active {

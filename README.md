@@ -1,9 +1,8 @@
 # Landing Abogados Medellín — LEXAR Legal Consultants S.A.S.
 
-Landing page de captación de leads para LEXAR Legal Consultants S.A.S., firma de abogados en Medellín, con dos variantes verticales:
+Landing page de captación de leads para LEXAR Legal Consultants S.A.S., firma de abogados en Medellín.
 
-- **`index.html`** — Variante Laboral y general (servicios integrales)
-- **`comercial.html`** — Variante Comercial (B2B, estructura corporativa, contratación estatal)
+- **`index.html`** — Landing única (laboral, comercial, contratación estatal y servicios integrales)
 
 Sitio estático sin build step. Listo para deploy en Vercel, Netlify, Cloudflare Pages, GitHub Pages o cualquier hosting tradicional.
 
@@ -12,19 +11,18 @@ Sitio estático sin build step. Listo para deploy en Vercel, Netlify, Cloudflare
 ## Estructura del proyecto
 
 ```
-pruebas/
-├── index.html              # Landing principal (Laboral)
-├── comercial.html          # Variante Comercial
+├── index.html              # Landing principal
 ├── css/
 │   └── styles.css          # Sistema de diseño completo
 ├── js/
-│   └── main.js             # Forms, FAQ, smooth scroll, tracking
+│   └── main.js             # Forms (Formspree), FAQ, smooth scroll, tracking
+├── images/                 # Logos de clientes, fotos del equipo, logo LEXAR
 ├── assets/
 │   ├── favicon.svg
-│   ├── lawyer-portrait.svg # Placeholder del retrato — reemplazar
-│   └── og-image.svg        # Open Graph preview
+│   └── og-image.svg
 ├── robots.txt
 ├── sitemap.xml
+├── vercel.json             # Redirects (p. ej. /comercial.html → /)
 └── README.md
 ```
 
@@ -109,7 +107,7 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(
 
 El JS ya emite eventos automáticamente:
 
-- `lead_form_submit` (con `form` = `hero` | `hero_comercial` | `exit_intent`)
+- `lead_form_submit` (con `form` = `hero` | `exit_intent`)
 - `whatsapp_click`
 - `call_click`
 - `faq_open`

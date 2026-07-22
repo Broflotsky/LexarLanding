@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/comercial.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/comercial",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

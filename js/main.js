@@ -3,7 +3,7 @@
    - Sticky header con sombra al scroll
    - FAQ accordion
    - Smooth scroll
-   - Validación y envío de formularios (mock)
+   - Formularios → Formspree (https://formspree.io/f/xzdnvqzb)
    - Exit-intent modal
    - Scroll reveal
    - Tracking events (GA4 ready)
@@ -127,6 +127,9 @@
     return value.trim().length >= 3;
   }
 
+  /* ---------- Formspree endpoint ---------- */
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xzdnvqzb";
+
   /* ---------- Manejo de formularios ---------- */
   function handleForm(form) {
     if (!form) return;
@@ -145,6 +148,9 @@
         validateField(field);
       });
       field.addEventListener("input", () => {
+        if (field.dataset.touched) validateField(field);
+      });
+      field.addEventListener("change", () => {
         if (field.dataset.touched) validateField(field);
       });
     });
@@ -199,50 +205,51 @@
         return;
       }
 
-      const data = Object.fromEntries(new FormData(form));
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      data._form = form.dataset.formId || "unknown";
+      data._subject =
+        data._form === "exit_intent"
+          ? "LEXAR — Solicitud de guía PDF"
+          : "LEXAR — Lead consulta";
       data.source = window.location.pathname;
-      data.utm = window.location.search;
+      data.utm = window.location.search || "(none)";
       data.referrer = document.referrer || "direct";
       data.submitted_at = new Date().toISOString();
+      if (data.consent) data.consent = "accepted";
 
       submitBtn.disabled = true;
       const originalText = submitBtn.textContent;
       submitBtn.textContent = "Enviando…";
 
       try {
-        // ====================================================
-        // MOCK SUBMIT — reemplazar con endpoint real (Formspree,
-        // Netlify Forms, API propia, HubSpot, etc.).
-        // Ejemplo:
-        //   await fetch('/api/lead', { method:'POST', body: JSON.stringify(data) });
-        // ====================================================
-        await new Promise((r) => setTimeout(r, 800));
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (!response.ok) {
+          const errBody = await response.json().catch(() => ({}));
+          throw new Error(errBody.error || `Formspree HTTP ${response.status}`);
+        }
 
         track("lead_form_submit", {
           form: form.dataset.formId,
           area: data.area || "general",
         });
 
-        // Mostrar éxito
         form.style.display = "none";
         if (successBox) successBox.classList.add("show");
-
-        // Redirección a WhatsApp con mensaje pre-llenado (engagement humano)
-        const waMsg = encodeURIComponent(
-          `Hola, soy ${data.name}. ${data.case_summary || data.message || "Acabo de enviar una consulta desde la web."}`
-        );
-        const waUrl = `https://wa.me/573245777090?text=${waMsg}`;
-        setTimeout(() => {
-          if (form.dataset.redirectWhatsapp === "true") {
-            window.location.href = waUrl;
-          }
-        }, 1500);
       } catch (err) {
         console.error(err);
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
         alert(
-          "Hubo un problema enviando tu mensaje. Por favor escríbenos directamente por WhatsApp."
+          "Hubo un problema enviando tu mensaje. Por favor escríbenos directamente por WhatsApp al 324 577 7090."
         );
       }
     });
